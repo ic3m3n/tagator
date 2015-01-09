@@ -21,6 +21,7 @@ $('#inputBox').tagator();
 ###### if you want to change settings:
 ```javascript
 $('#inputBox').tagator({
+    enableSpace: false,
     prefix: 'tagator_',           // CSS class prefix
     height: 'auto',               // auto or element
     useDimmer: false,             // dims the screen when result list is visible
@@ -28,6 +29,17 @@ $('#inputBox').tagator({
     autocomplete: []              // this is an array of autocomplete options
 });
 ```
+Events
+------
+Events are triggered on: $(document)
+Example: $(document).on('tagator:created', function() {
+    do something;
+});
+
+Listeners         | Description
+----------------  | ------------------------
+tagator:created   | Fired when tag created
+tagator:removed   | Fired when tag removed
 
 
 CSS classes

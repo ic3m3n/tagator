@@ -29,6 +29,7 @@
 (function($) {
 	$.tagator = function (element, options) {
 		var defaults = {
+			enableSpace: true,
 			prefix: 'tagator_',
 			height: 'auto',
 			useDimmer: false,
@@ -47,6 +48,7 @@
 			backspace: 8,
 			enter: 13,
 			escape: 27,
+			space: 32,
 			left: 37,
 			up: 38,
 			right: 39,
@@ -204,6 +206,17 @@
 						}
 						resizeInput();
 						break;
+					case key.space:
+					if(plugin.settings.enableSpace) {
+						e.preventDefault();
+						if (selected_index === -1) {
+							if ($(input_element).val() !== '') {
+								addTag($(input_element).val());
+							}
+						}
+						resizeInput();
+					}
+						break;
 					case key.enter:
 						e.preventDefault();
 						if (selected_index !== -1) {
@@ -218,8 +231,10 @@
 					case key.backspace:
 						if (input_element.value === '') {
 							$(element).val($(element).val().substring(0, $(element).val().lastIndexOf(',')));
+							$(document).trigger('tagator:removed');
 							$(element).trigger('change');
 							searchOptions();
+
 						}
 						resizeInput();
 						break;
@@ -343,6 +358,8 @@
 			if (!hasTag(text)) {
 				$(element).val($(element).val() + ($(element).val() !== '' ? ',' : '') + text);
 				$(element).trigger('change');
+
+				$(document).trigger('tagator:added');
 			}
 			$(input_element).val('');
 			box_element.focus();
