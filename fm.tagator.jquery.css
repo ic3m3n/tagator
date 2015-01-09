@@ -23,12 +23,12 @@
 
 /* Main box */
 .tagator {
-	border: 1px solid #abadb3;
-	border-radius: 3px;
+	border-bottom: 1px solid #30373a;
 	box-sizing: border-box;
-	background-color: #fff;
+	background: none;
 	display: inline-block;
 	text-decoration: none;
+	padding-bottom: 4px !important;
 }
 .tagator.options-visible {
 	position: relative;
@@ -43,36 +43,33 @@
 /* chosen item */
 .tagator_tag {
 	display: inline-block;
-	background-color: #39f;
-	border-radius: 2px;
-	color: #fff;
-	padding: 2px 20px 2px 4px;
-	font-size: 13px;
+	color: #30373a;
+	padding: 4px 22px 4px 8px;
+	font-size: 15px;
 	margin: 2px;
 	position: relative;
 	vertical-align: top;
+	border: 1px solid #30373a;
+	border-radius: 2px;
 }
 
 /* chosen item remove button */
 .tagator_tag_remove {
 	display: inline-block;
-	font-weight: bold;
-	color: #fff;
-	margin: 0 0 0 5px;
-	padding: 6px 5px 4px 5px;
 	cursor: pointer;
-	font-size: 11px;
-	line-height: 10px;
-	vertical-align: top;
-	border-radius: 0 2px 2px 0;
 	position: absolute;
 	right: 0;
 	top: 0;
-	bottom: 0;
+	padding: 4px 6px;
 }
-.tagator_tag_remove:hover {
-	color: #000;
-	background-color: #8cf;
+
+.tagator_tag_remove_btn {
+	width: 10px;
+	height: 10px;
+}
+
+.tagator_tag_remove_btn-color {
+	fill: #30373a;
 }
 
 /* input box */
@@ -81,8 +78,9 @@
 	border: 0;
 	display: inline-block;
 	margin: 0;
+	margin-top: 4px;
 	background-color: transparent;
-	font-size: 13px;
+	font-size: 15px;
 	outline: none;
 	padding: 4px 0 0 5px;
 }
@@ -94,8 +92,8 @@
 .tagator_options {
 	margin: 0;
 	padding: 0;
-	border: 1px solid #7f9db9;
-	border-radius: 0 0 3px 3px;
+	border: 1px solid #30373a;
+	border-radius: 0 0 2px 2px;
 	font-family: sans-serif;
 	position: absolute;
 	box-sizing: border-box;

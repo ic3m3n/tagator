@@ -316,7 +316,7 @@
 						removeTag($(this).data('text'));
 						$(element).trigger('change');
 					});
-					$(button_remove_element).html('X');
+					$(button_remove_element).html('<svg class="tagator_tag_remove_btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 421 422" style="enable-background:new 0 0 421 422;" xml:space="preserve"><g><path class="tagator_tag_remove_btn-color" d="M340,373.2L211.2,244.3L81.7,373.9l-33.5-33.5l129.5-129.5L48.5,81.7L82,48.1l129.2,129.2L339.7,48.8l33.5,33.5L244.7,210.8l128.8,128.8L340,373.2z"/></g></svg>');
 					$(tag_element).append(button_remove_element);
 					// clear
 					var clear_element = document.createElement('div');

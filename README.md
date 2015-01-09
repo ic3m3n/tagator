@@ -95,16 +95,6 @@ $('#inputBox').tagator('destroy');
 ```
 
 
-Browser compatibility
----------------------
-* IE 8+
-* Chrome 2+
-* Firefox 3+
-* Safari 4+
-* Opera 10.5+
-
-
-
 Copyright and license
 ---------------------
 The MIT License (MIT)
