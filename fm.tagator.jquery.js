@@ -105,7 +105,7 @@
 			$(box_element).append(tags_element);
 			// input element
 			input_element = document.createElement('input');
-			$(input_element).addClass(plugin.settings.prefix + 'input');
+			$(input_element).addClass(plugin.settings.prefix + 'input').attr('id',  element.id + '-' + 'input');
 			$(input_element).width(20);
 			$(input_element).attr('autocomplete', 'false');
 			$(box_element).append(input_element);
@@ -154,6 +154,7 @@
 					searchOptions();
 				}
 				input_element.focus();
+				$(document).trigger('tagator:focus');
 			});
 			$(box_element).bind('dblclick', function (e) {
 				e.preventDefault();

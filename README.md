@@ -38,8 +38,9 @@ Example: $(document).on('tagator:created', function() {
 
 Listeners         | Description
 ----------------  | ------------------------
-tagator:added   | Fired when tag created
+tagator:added     | Fired when tag created
 tagator:removed   | Fired when tag removed
+tagator:focus     | Fired when cursor in inputfield
 
 
 CSS classes
