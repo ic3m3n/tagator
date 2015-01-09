@@ -38,7 +38,7 @@ Example: $(document).on('tagator:created', function() {
 
 Listeners         | Description
 ----------------  | ------------------------
-tagator:created   | Fired when tag created
+tagator:added   | Fired when tag created
 tagator:removed   | Fired when tag removed
 
 
@@ -97,7 +97,7 @@ $('#inputBox').tagator('destroy');
 Version
 -------
 
-0.0.0
+0.0.1
 
 
 Copyright and license
