@@ -29,6 +29,7 @@
 (function($) {
 	$.tagator = function (element, options) {
 		var defaults = {
+			enableSpace: true,
 			prefix: 'tagator_',
 			height: 'auto',
 			useDimmer: false,
@@ -47,6 +48,7 @@
 			backspace: 8,
 			enter: 13,
 			escape: 27,
+			space: 32,
 			left: 37,
 			up: 38,
 			right: 39,
@@ -204,6 +206,17 @@
 						}
 						resizeInput();
 						break;
+					case key.space:
+					if(plugin.settings.enableSpace) {
+						e.preventDefault();
+						if (selected_index === -1) {
+							if ($(input_element).val() !== '') {
+								addTag($(input_element).val());
+							}
+						}
+						resizeInput();
+					}
+						break;
 					case key.enter:
 						e.preventDefault();
 						if (selected_index !== -1) {
@@ -218,8 +231,10 @@
 					case key.backspace:
 						if (input_element.value === '') {
 							$(element).val($(element).val().substring(0, $(element).val().lastIndexOf(',')));
+							$(document).trigger('tagator:removed');
 							$(element).trigger('change');
 							searchOptions();
+
 						}
 						resizeInput();
 						break;
@@ -301,7 +316,7 @@
 						removeTag($(this).data('text'));
 						$(element).trigger('change');
 					});
-					$(button_remove_element).html('X');
+					$(button_remove_element).html('<svg class="tagator_tag_remove_btn" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="0 0 421 422" style="enable-background:new 0 0 421 422;" xml:space="preserve"><g><path class="tagator_tag_remove_btn-color" d="M340,373.2L211.2,244.3L81.7,373.9l-33.5-33.5l129.5-129.5L48.5,81.7L82,48.1l129.2,129.2L339.7,48.8l33.5,33.5L244.7,210.8l128.8,128.8L340,373.2z"/></g></svg>');
 					$(tag_element).append(button_remove_element);
 					// clear
 					var clear_element = document.createElement('div');
@@ -343,6 +358,8 @@
 			if (!hasTag(text)) {
 				$(element).val($(element).val() + ($(element).val() !== '' ? ',' : '') + text);
 				$(element).trigger('change');
+
+				$(document).trigger('tagator:added');
 			}
 			$(input_element).val('');
 			box_element.focus();
