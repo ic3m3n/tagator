@@ -94,6 +94,11 @@ $('#inputBox').tagator('autocomplete', ['tag1','tag2','tag3']);
 $('#inputBox').tagator('destroy');
 ```
 
+Version
+-------
+
+0.0.0
+
 
 Copyright and license
 ---------------------
