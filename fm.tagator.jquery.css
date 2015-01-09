@@ -28,7 +28,6 @@
 	background: none;
 	display: inline-block;
 	text-decoration: none;
-	padding-bottom: 4px !important;
 }
 .tagator.options-visible {
 	position: relative;
@@ -47,6 +46,7 @@
 	padding: 4px 22px 4px 8px;
 	font-size: 15px;
 	margin-right: 5px;
+	margin-bottom: 5px;
 	position: relative;
 	vertical-align: top;
 	border: 1px solid #30373a;
