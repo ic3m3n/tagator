@@ -103,7 +103,7 @@
 	overflow: auto;
 	max-height: 250px;
 	list-style: none;
-	left: -1px;
+	left: 0;
 	right: -1px;
 }
 .tagator.options-hidden .tagator_options {
