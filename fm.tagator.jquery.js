@@ -30,6 +30,7 @@
 	$.tagator = function (element, options) {
 		var defaults = {
 			enableSpace: true,
+			placeholder: 'tag it',
 			prefix: 'tagator_',
 			height: 'auto',
 			useDimmer: false,
@@ -106,7 +107,8 @@
 			// input element
 			input_element = document.createElement('input');
 			$(input_element).addClass(plugin.settings.prefix + 'input').attr('id',  element.id + '-' + 'input');
-			$(input_element).width(20);
+			$(input_element).attr('placeholder',  plugin.settings.placeholder);
+			$(input_element).width(50);
 			$(input_element).attr('autocomplete', 'false');
 			$(box_element).append(input_element);
 			// options element
@@ -279,7 +281,7 @@
 		// RESIZE INPUT
 		var resizeInput = function () {
 			textlength_element.innerHTML = input_element.value;
-			$(input_element).css({ width: ($(textlength_element).width() + 20) + 'px' });
+			$(input_element).css({ width: ($(textlength_element).width() + 50) + 'px' });
 		};
 
 
