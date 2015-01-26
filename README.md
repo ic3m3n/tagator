@@ -98,7 +98,7 @@ $('#inputBox').tagator('destroy');
 Version
 -------
 
-0.0.3
+0.0.4
 
 
 Copyright and license
